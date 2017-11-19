@@ -1,39 +1,64 @@
-<h1>Create show</h1>
+<h1>Create shop</h1>
 
 <form action="/shows/create" method="post">
   <div class="form-group">
     <label for="name">Name*</label>
-    <input class="form-control" type="text" id="name" name="name" placeholder="Nom du concert" required>
+    <input class="form-control" type="text" id="name" name="name" placeholder="Nom du commerce" required>
   </div>
 
   <div class="form-group">
-    <label for="venue">Venue*</label>
-    <input class="form-control" type="text" id="venue" name="venue" placeholder="Nom de la salle" required>
+    <label for="shop-type">Shop type*</label>
+    <input class="form-control" type="text" id="shop-type" name="shop-type" placeholder="Type de commerce" required>
+  </div>
+
+  <div class="form-group">
+    <label for="zw-type">Zero waste type</label>
+    <input class="form-control" type="text" id="zw-type" name="zw-type" placeholder="Recyclage, Emballage...">
+  </div>
+
+  <div class="form-group">
+    <label for="zw-precise-type">Zero waste precise type</label>
+    <input class="form-control" type="text" id="zw-precise-type" name="zw-precise-type" placeholder="Emballages limites, recyclage elabore..." required>
   </div>
 
   <div class="form-group">
     <label for="description">Description</label>
-    <input class="form-control" type="text" id="description" name="description" placeholder="Description du concert">
+    <input class="form-control" type="text" id="description" name="description" placeholder="Description">
   </div>
 
   <div class="form-group">
-    <label for="capacity">Capacity</label>
-    <input class="form-control" type="number" id="capacity" name="capacity" placeholder="Ex: 500">
+    <label for="address">Adresse</label>
+    <input class="form-control" type="address" id="address" name="address" placeholder="ex : 20 boulevard Saint-Germain">
   </div>
 
   <div class="form-group">
-    <label for="price">Price*</label>
-    <input class="form-control" type="number" id="price" name="price" placeholder="Ex: 30" required>
+    <label for="picture">Photo</label>
+    <input class="form-control" type="url" id="picture" name="picture" placeholder="Ex: http://lien.vers-l-image.com/img.jpeg">
   </div>
 
   <div class="form-group">
-    <label for="image">Image</label>
-    <input class="form-control" type="text" id="image" name="image" placeholder="Ex: http://lien.vers-l-image.com/img.jpeg">
+    <label for="phone">Telephone</label>
+    <input class="form-control" type="text" id="phone" name="phone" placeholder="Ex: 0600995588">
   </div>
 
   <div class="form-group">
-    <label for="date">Date</label>
-    <input class="form-control" type="date" id="date" name="date">
+    <label for="mail">E-mail</label>
+    <input class="form-control" type="email" id="mail" name="mail" placeholder="Ex: zw@shop.fr">
+  </div>
+
+  <div class="form-group">
+    <label for="facebook">Facebook</label>
+    <input class="form-control" type="url" id="facebook" name="facebook" placeholder="Ex: http://facebook.com/zwshop">
+  </div>
+
+  <div class="form-group">
+    <label for="website">Site Internet</label>
+    <input class="form-control" type="url" id="website" name="website" placeholder="Ex: zwshop.fr">
+  </div>
+
+  <div class="form-group">
+    <label for="hours">Horaires</label>
+    <input class="form-control" type="text" id="hours" name="hours" placeholder="Ex: 09h-18h">
   </div>
 
   <div class="form-group">
