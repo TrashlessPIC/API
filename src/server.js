@@ -16,7 +16,7 @@ import HandlebarsConfig from "./helpers/HandlebarsConfig";
 // Récupération des controllers
 import SeedDbController from "./controllers/SeedDbController";
 import HomeController from "./controllers/HomeController";
-import ShowController from "./controllers/ShowController";
+import ShopController from "./controllers/ShopController";
 import BookingController from "./controllers/BookingController";
 
 // Configuration du serveur
@@ -66,13 +66,13 @@ server.post('/seeddb', SeedDbController.seedDb);
 // Routes pour les vues
 server.get('/', HomeController.getIndex);
 
-server.get('/shows', ShowController.getShows);
-server.get('/shows/id/:id', ShowController.getShow);
-server.get('/shows/create', ShowController.getCreateShow);
-server.post('/shows/create', ShowController.postCreateShow);
-server.get('/shows/update/:id', ShowController.getUpdateShow);
-server.post('/shows/update/:id', ShowController.postUpdateShow);
-server.get('/shows/delete/:id', ShowController.getDeleteShow);
+server.get('/shops', ShopController.getShops);
+server.get('/shops/id/:id', ShopController.getShop);
+server.get('/shops/create', ShopController.getCreateShop);
+server.post('/shops/create', ShopController.postCreateShop);
+server.get('/shops/update/:id', ShopController.getUpdateShop);
+server.post('/shops/update/:id', ShopController.postUpdateShop);
+server.get('/shops/delete/:id', ShopController.getDeleteShop);
 
 server.get('/bookings', BookingController.getBookings);
 server.get('/bookings/id/:id', BookingController.getBooking);
@@ -85,11 +85,11 @@ server.get('/bookings/delete/:id', BookingController.getDeleteBooking);
 // Routes pour les APIs
 server.get('/api/', HomeController.getIndexApi);
 
-server.get('/api/shows', ShowController.getShowsApi);
-server.get('/api/shows/id/:id', ShowController.getShowApi);
-server.post('/api/shows/create', ShowController.postCreateShowApi);
-server.post('/api/shows/update/:id', ShowController.postUpdateShowApi);
-server.post('/api/shows/delete/:id', ShowController.postDeleteShowApi);
+server.get('/api/shops', ShopController.getShopsApi);
+server.get('/api/shops/id/:id', ShopController.getShopApi);
+server.post('/api/shops/create', ShopController.postCreateShopApi);
+server.post('/api/shops/update/:id', ShopController.postUpdateShopApi);
+server.post('/api/shops/delete/:id', ShopController.postDeleteShopApi);
 
 server.get('/api/bookings', BookingController.getBookingsApi);
 server.get('/api/bookings/id/:id', BookingController.getBookingApi);

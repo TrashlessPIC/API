@@ -1,15 +1,15 @@
 // Liste des erreurs que l'API peut renvoyer
 
 const list = {
-  noShowsError: {
+  noShopsError: {
     code: 500,
-    error: 'noShowsError',
-    error_description: 'La base ne contient pas de show'
+    error: 'noShopsError',
+    error_description: 'La base ne contient pas de shop'
   },
-  noShowError: {
+  noShopError: {
     code: 500,
-    error: 'noShowError',
-    error_description: 'Ce show n\'existe pas'
+    error: 'noShopError',
+    error_description: 'Ce shop n\'existe pas'
   },
   noBookingsError: {
     code: 500,

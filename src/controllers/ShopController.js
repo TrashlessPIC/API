@@ -1,37 +1,37 @@
-// Controller de la route '/shows'
+// Controller de la route '/shops'
 import _ from "lodash";
 import Errors from "../helpers/Errors";
 
 // Récupération du model
-import ShowModel from "../models/ShowModel";
+import ShopModel from "../models/ShopModel";
 
-const shows = () => {
-  // On fait appel à la fonction getShows du model
-  // Celle ci renvoie tous les shows présents en base
-  return ShowModel.getShows()
+const shops = () => {
+  // On fait appel à la fonction getShops du model
+  // Celle ci renvoie tous les shops présents en base
+  return ShopModel.getShops()
   .then((data) => {
-    // On récupère ici data qui est une liste de shows
+    // On récupère ici data qui est une liste de shops
 
     if (data === null) {
-      // Si data est vide, nous renvoyons l'erreur 'noShowsError'
-      throw new Error('noShowsError');
+      // Si data est vide, nous renvoyons l'erreur 'noShopsError'
+      throw new Error('noShopsError');
     }
 
     // On prépare ici la réponse que va renvoyer l'api, il s'agit d'un tableau
-    let response = [];
-    for (let show of data){
+    let response = [];shop
+    for (let shop of data){
       // On parcours data. pour chaque élément, on garde les champs name, venue, description, capacity, price, image et date
       response[response.length] = {
-        id: show._id,
-        name: show.name,
-        venue: show.venue,
-        description: show.description,
-        capacity: show.capacity,
-        price: show.price,
-        image: show.image,
-        date: show.date,
-        lat: show.lat,
-        lng: show.lng
+        id: shop._id,
+        name: shop.name,
+        venue: shop.venue,
+        description: shop.description,
+        capacity: shop.capacity,
+        price: shop.price,
+        image: shop.image,
+        date: shop.date,
+        lat: shop.lat,
+        lng: shop.lng
       }
     }
 
@@ -40,19 +40,19 @@ const shows = () => {
   });
 }
 
-const show = (_id) => {
-  // On fait appel à la fonction getShow du model
-  // Celle ci renvoie le show dont l'id est _id
-  return ShowModel.getShow(_id)
+const shop = (_id) => {
+  // On fait appel à la fonction getShop du model
+  // Celle ci renvoie le shop dont l'id est _id
+  return ShopModel.getShop(_id)
   .then((data) => {
-    // On récupère ici data qui est une liste de shows
+    // On récupère ici data qui est une liste de shops
 
     if (data === null) {
-      // Si data est vide, nous renvoyons l'erreur 'noShowError'
-      throw new Error('noShowError');
+      // Si data est vide, nous renvoyons l'erreur 'noShopError'
+      throw new Error('noShopError');
     }
 
-    // On prépare ici la réponse que va renvoyer l'api, il s'agit d'un élement
+    // On prépare ici la réponse que va renvoyer l'api, il shop'agit d'un élement
     let response = {
       id: data._id,
       name: data.name,
@@ -69,53 +69,53 @@ const show = (_id) => {
   });
 }
 
-const createShow = (show) => {
-  // On fait appel à la fonction createShow du model
-  // Celle ci renvoie le show dont l'id est _id
-  return ShowModel.createShow(show);
+const createShop = (shop) => {
+  // On fait appel à la fonction createShop du model
+  // Celle ci renvoie le shop dont l'id est _id
+  return ShopModel.createShop(shop);
 }
 
-const updateShow = (id, show) => {
-  // On fait appel à la fonction updateShow du model
-  // Celle ci renvoie le show dont l'id est _id
-  return ShowModel.updateShow(id, show);
+const updateShop = (id, shop) => {
+  // On fait appel à la fonction updateShop du model
+  // Celle ci renvoie le shop dont l'id est _id
+  return ShopModel.updateShop(id, shop);
 }
 
-const deleteShow = (id) => {
-  // On fait appel à la fonction deleteShow du model
-  // Celle ci renvoie le show dont l'id est _id
-  return ShowModel.deleteShow(id);
+const deleteShop = (id) => {
+  // On fait appel à la fonction deleteShop du model
+  // Celle ci renvoie le shop dont l'id est _id
+  return ShopModel.deleteShop(id);
 }
 
 export default {
   // Controller des views
-  getShows: (req, res) => {
-    shows()
+  getShops: (req, res) => {
+    Shops()
     .then((data) => {
-      // data contient une liste de shows
-      res.render('show/shows', { shows: data });
+      // data contient une liste de Shops
+      res.render('shop/Shops', { Shops: data });
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
     });
   },
 
-  getShow: (req, res) => {
-    show(req.params.id)
+  getShop: (req, res) => {
+    shop(req.params.id)
     .then((data) => {
-      res.render('show/show', { show: data });
+      res.render('shop/shop', { shop: data });
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
     });
   },
 
-  getCreateShow: (req, res) => {
-    res.render('show/createShow');
+  getCreateShop: (req, res) => {
+    res.render('shop/createShop');
   },
 
-  postCreateShow: (req, res) => {
-    let show = {
+  postCreateShop: (req, res) => {
+    let shop = {
       name: req.body.name,
       venue: req.body.venue,
       description: req.body.description,
@@ -127,27 +127,27 @@ export default {
       lng: req.body.lng
     };
 
-    createShow(show)
+    createShop(shop)
     .then((data) => {
-      res.redirect('/shows');
+      res.redirect('/Shops');
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
     });
   },
 
-  getUpdateShow: (req, res) => {
-    show(req.params.id)
+  getUpdateShop: (req, res) => {
+    shop(req.params.id)
     .then((data) => {
-      res.render('show/updateShow', { show: data });
+      res.render('shop/updateShop', { shop: data });
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
     });
   },
 
-  postUpdateShow: (req, res) => {
-    let show = {
+  postUpdateShop: (req, res) => {
+    let shop = {
       name: req.body.name,
       venue: req.body.venue,
       description: req.body.description,
@@ -159,19 +159,19 @@ export default {
       lng: req.body.lng
     };
 
-    updateShow(req.params.id, show)
+    updateShop(req.params.id, shop)
     .then((data) => {
-      res.redirect('/shows');
+      res.redirect('/Shops');
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
     });
   },
 
-  getDeleteShow: (req, res) => {
-    deleteShow(req.params.id)
+  getDeleteShop: (req, res) => {
+    deleteShop(req.params.id)
     .then((data) => {
-      res.redirect('/shows');
+      res.redirect('/Shops');
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
@@ -181,11 +181,11 @@ export default {
   // ************ API FROM THERE ************ //
 
   // Controller des Apis
-  getShowsApi: (req, res) => {
-    shows()
+  getShopsApi: (req, res) => {
+    Shops()
     .then((data) => {
       // data contient maintenant la valeur retournée par la fonction _.sortBy
-      // Si les opérations précédentes se sont bien passées, l'api renvoie une liste de shows
+      // Si les opérations précédentes se sont bien passées, l'api renvoie une liste de Shops
       res.send(data);
     }, (err) => {
       // Si une erreur a été renvoyée avec la fonctions throw new Error(), nous atterrissons ici
@@ -194,8 +194,8 @@ export default {
     });
   },
 
-  getShowApi: (req, res) => {
-    show(req.params.id)
+  getShopApi: (req, res) => {
+    shop(req.params.id)
     .then((data) => {
       res.send(data);
     }, (err) => {
@@ -204,8 +204,8 @@ export default {
     });
   },
 
-  postCreateShowApi: (req, res) => {
-    let show = {
+  postCreateShopApi: (req, res) => {
+    let shop = {
       name: req.body.name,
       venue: req.body.venue,
       description: req.body.description,
@@ -217,7 +217,7 @@ export default {
       lng: req.body.lng
     };
 
-    createShow(show)
+    createShop(shop)
     .then((data) => {
       res.send('ok');
     }, (err) => {
@@ -226,8 +226,8 @@ export default {
     });
   },
 
-  postUpdateShowApi: (req, res) => {
-    let show = {
+  postUpdateShopApi: (req, res) => {
+    let shop = {
       name: req.body.name,
       venue: req.body.venue,
       description: req.body.description,
@@ -237,7 +237,7 @@ export default {
       date: req.body.date,
     };
 
-    updateShow(req.params.id, show)
+    updateShop(req.params.id, shop)
     .then((data) => {
       res.send('ok');
     }, (err) => {
@@ -246,8 +246,8 @@ export default {
     });
   },
 
-  postDeleteShowApi: (req, res) => {
-    deleteShow(req.params.id)
+  postDeleteShopApi: (req, res) => {
+    deleteShop(req.params.id)
     .then((data) => {
       res.send('ok');
     }, (err) => {

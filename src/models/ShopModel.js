@@ -1,15 +1,15 @@
-// Model de la route '/shows'
+// Model de la route '/Shops'
 
 import mongoose from "mongoose";
 mongoose.Promise = global.Promise;
 
-import ShowSeeds from "../helpers/ShowSeeds";
+import ShopSeeds from "../helpers/ShopSeeds";
 
 let Schema = new mongoose.Schema({
   name: { type: String },         // le nom du concert
   venue: { type: String },        // le nom de la salle
   description: { type: String },  // la description
-  capacity: { type: Number },     // la capacité du show
+  capacity: { type: Number },     // la capacité du shop
   price: { type: Number },        // le prix
   image: { type: String },        // l'url de l'image
   date: { type: String },         // la date du concert
@@ -17,58 +17,58 @@ let Schema = new mongoose.Schema({
   lng: {type: String }            // longitude du lieu
 });
 
-let Model = mongoose.model('Show', Schema);
+let Model = mongoose.model('Shop', Schema);
 
 export default {
-  seedShows: () => {
+  seedShops: () => {
     let promises = [];
-    for (let show of ShowSeeds){
-      promises[promises.legth] = Model.create(show);
+    for (let shop of ShopSeeds){
+      promises[promises.legth] = Model.create(shop);
     }
     return Promise.all(promises);
   },
 
-  getShows: () => {
+  getShops: () => {
     return Model.find({}).exec();
   },
 
-  getShow: (_id) => {
+  getShop: (_id) => {
     return Model.findOne({ _id }).exec();
   },
 
-  createShow: (show) => {
+  createShop: (shop) => {
     return Model.create({
-      name: show.name,
-      venue: show.venue,
-      description: show.description,
-      capacity: show.capacity,
-      price: show.price,
-      image: show.image,
-      date: show.date,
-      lat: show.lat,
-      lng: show.lng
+      name: shop.name,
+      venue: shop.venue,
+      description: shop.description,
+      capacity: shop.capacity,
+      price: shop.price,
+      image: shop.image,
+      date: shop.date,
+      lat: shop.lat,
+      lng: shop.lng
     });
   },
 
-  updateShow: (_id, show) => {
+  updateShop: (_id, shop) => {
     return Model.findOneAndUpdate({ _id }, {
-      name: show.name,
-      venue: show.venue,
-      description: show.description,
-      capacity: show.capacity,
-      price: show.price,
-      image: show.image,
-      date: show.date,
-      lat: show.lat,
-      lng: show.lng
+      name: shop.name,
+      venue: shop.venue,
+      description: shop.description,
+      capacity: shop.capacity,
+      price: shop.price,
+      image: shop.image,
+      date: shop.date,
+      lat: shop.lat,
+      lng: shop.lng
     }, {upsert: true}).exec();
   },
 
-  deleteShows: () => {
+  deleteShops: () => {
     return Model.remove({}).exec();
   },
 
-  deleteShow: (_id) => {
+  deleteShop: (_id) => {
     return Model.remove({ _id }).exec();
   },
 };
