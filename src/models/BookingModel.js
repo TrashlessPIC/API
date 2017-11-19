@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 
 let Schema = new mongoose.Schema({
   username: { type: String }, // le nom de l'utilisateur
-  showId: { type: String },   // l'id du show
+  shopId: { type: String },   // l'id du shop
   seats: { type: Number },    // le nombre de places achetées
   createdAt: { type: Date },  // la date de création de la réservation
   updatedAt: { type: Date },  // la date de modification de la réservation
@@ -25,7 +25,7 @@ export default {
   createBooking: (booking) => {
     return Model.create({
       username: booking.username,
-      showId: booking.showId,
+      shopId: booking.shopId,
       seats: booking.seats,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -35,7 +35,7 @@ export default {
   updateBooking: (_id, booking) => {
     return Model.findOneAndUpdate({ _id }, {
       username: booking.username,
-      showId: booking.showId,
+      shopId: booking.shopId,
       seats: booking.seats,
       updatedAt: new Date(),
     }, {upsert: true}).exec();
