@@ -1,54 +1,79 @@
-<h1>Update show</h1>
+<<h1>Update shop</h1>
 
-<form action="/shows/update/{{show.id}}" method="post">
+<form action="/shops/create" method="post">
   <div class="form-group">
     <label for="name">Name*</label>
-    <input value="{{show.name}}" class="form-control" type="text" id="name" name="name" placeholder="Nom du concert" required>
+     <input value="{{shop.name}}" class="form-control" type="text" id="name" name="name" placeholder="Nom du commerce" required>
   </div>
 
   <div class="form-group">
-    <label for="venue">Venue*</label>
-    <input value="{{show.venue}}" class="form-control" type="text" id="venue" name="venue" placeholder="Nom de la salle" required>
+    <label for="shop-type">Shop type*</label>
+     <input value="{{shop.type}}" class="form-control" type="text" id="shop-type" name="shop-type" placeholder="Type de commerce" required>
+  </div>
+
+  <div class="form-group">
+    <label for="zw-type">Zero waste type</label>
+     <input value="{{shope.zw-type}}" class="form-control" <input class="form-control" type="text" id="zw-type" name="zw-type" placeholder="Recyclage, Emballage...">
+  </div>
+
+  <div class="form-group">
+    <label for="zw-precise-type">Zero waste precise type</label>
+     <input value="{{shop.zw-precise-type}}" class="form-control" <input class="form-control" type="text" id="zw-precise-type" name="zw-precise-type" placeholder="Emballages limites, recyclage elabore..." required>
   </div>
 
   <div class="form-group">
     <label for="description">Description</label>
-    <input value="{{show.description}}" class="form-control" type="text" id="description" name="description" placeholder="Description du concert">
+    <input value="{{shop.description}}" class="form-control" <input class="form-control" type="text" id="description" name="description" placeholder="Description">
   </div>
 
   <div class="form-group">
-    <label for="capacity">Capacity</label>
-    <input value="{{show.capacity}}" class="form-control" type="number" id="capacity" name="capacity" placeholder="Ex: 500">
+    <label for="address">Adresse</label>
+    <input value="{{shop.address}}" class="form-control" <input class="form-control" type="address" id="address" name="address" placeholder="ex : 20 boulevard Saint-Germain">
   </div>
 
   <div class="form-group">
-    <label for="price">Price*</label>
-    <input value="{{show.price}}" class="form-control" type="number" id="price" name="price" placeholder="Ex: 30" required>
+    <label for="picture">Photo</label>
+    <input value="{{shop.picture}}" class="form-control" <input class="form-control" type="url" id="picture" name="picture" placeholder="Ex: http://lien.vers-l-image.com/img.jpeg">
   </div>
 
   <div class="form-group">
-    <label for="image">Image</label>
-    <input value="{{show.image}}" class="form-control" type="text" id="image" name="image" placeholder="Ex: http://lien.vers-l-image.com/img.jpeg">
+    <label for="phone">Telephone</label>
+    <input value="{{shop.phone}}" class="form-control" <input class="form-control" type="text" id="phone" name="phone" placeholder="Ex: 0600995588">
   </div>
 
   <div class="form-group">
-    <label for="date">Date</label>
-    <input value="{{show.date}}" class="form-control" type="date" id="date" name="date">
+    <label for="mail">E-mail</label>
+    <input value="{{shop.mail}}" class="form-control" <input class="form-control" type="email" id="mail" name="mail" placeholder="Ex: zw@shop.fr">
+  </div>
+
+  <div class="form-group">
+    <label for="facebook">Facebook</label>
+    <input value="{{shop.facebook}}" class="form-control" <input class="form-control" type="url" id="facebook" name="facebook" placeholder="Ex: http://facebook.com/zwshop">
+  </div>
+
+  <div class="form-group">
+    <label for="website">Site Internet</label>
+    <input value="{{shop.website}}" class="form-control" <input class="form-control" type="url" id="website" name="website" placeholder="Ex: zwshop.fr">
+  </div>
+
+  <div class="form-group">
+    <label for="hours">Horaires</label>
+    <input value="{{shop.hours}}" class="form-control" <input class="form-control" type="text" id="hours" name="hours" placeholder="Ex: 09h-18h">
   </div>
 
   <div class="form-group">
     <label for="lat">Latitude</label>
-    <input value="{{show.lat}}" class="form-control" type="text" id="lat" name="lat" placeholder="Latitude">
+    <input value="{{shop.lat}}" class="form-control" <input class="form-control" type="text" id="lat" name="lat" placeholder="Latitude">
   </div>
 
   <div class="form-group">
     <label for="lng">Longitude</label>
-    <input value="{{show.lng}}" class="form-control" type="text" id="lng" name="lng" placeholder="Longitude">
+    <input value="{{shop.lng}}" class="form-control" <input class="form-control" type="text" id="lng" name="lng" placeholder="Longitude">
   </div>
 
   <div class="text-center">
     <button type="submit" class="btn btn-primary">
-      Update
+      Create
     </button>
   </div>
 </form>
