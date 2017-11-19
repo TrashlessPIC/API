@@ -1,26 +1,30 @@
-<h1>Show</h1>
+<h1>Shop</h1>
 
 <div>
-  <div>name : {{show.name}}</div>
-  <div>venue : {{show.venue}}</div>
-  <div>lat : {{show.lat}}</div>
-  <div>lng : {{show.lng}}</div>
-  <div>description : {{show.description}}</div>
-  <div>capacity : {{show.capacity}}</div>
-  <div>price : {{show.price}}</div>
+  <div>name : {{shop.name}}</div>
+   <div>address : {{shop.address}}</div>
+  <div>zw-type : {{shop.zw-type}}</div>
+  <div>zw-precise-type : {{shop.zw-precise-type}}</div>
+  <div>description : {{shop.description}}</div>
+ <div>phone : {{shop.phone}}</div>
+ <div>mail : {{shop.mail}}</div>
+ <div>facebook : {{shop.facebook}}</div>
+ <div>hours : {{shop.hours}}</div>
+  <div>lat : {{shop.lat}}</div>
+  <div>lng : {{sho.lng}}</div>
+
   <div>
-    <img src="{{show.image}}" />
-  <div>date : {{show.date}}</div>
+    <img src="{{show.photo}}" />
 </div>
 
 <div class="text-center">
-  <a class="btn btn-primary" href="/shows/create" role="button">
+  <a class="btn btn-primary" href="/shops/create" role="button">
     Add a show
   </a>
-  <a class="btn btn-secondary" href="/shows/update/{{show.id}}" role="button">
+  <a class="btn btn-secondary" href="/shops/update/{{shop.id}}" role="button">
     Update
   </a>
-  <a class="btn btn-danger" href="/shows/delete/{{show.id}}" role="button">
+  <a class="btn btn-danger" href="/shops/delete/{{shop.id}}" role="button">
     Delete
   </a>
 </div>
