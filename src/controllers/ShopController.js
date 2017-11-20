@@ -52,7 +52,7 @@ const shop = (_id) => {
       throw new Error('noShopError');
     }
 
-    // On prépare ici la réponse que va renvoyer l'api, il shop'agit d'un élement
+    // On prépare ici la réponse que va renvoyer l'api, il s'agit d'un élement
     let response = {
       id: data._id,
       name: data.name,
@@ -90,10 +90,10 @@ const deleteShop = (id) => {
 export default {
   // Controller des views
   getShops: (req, res) => {
-    Shops()
+    shops()
     .then((data) => {
-      // data contient une liste de Shops
-      res.render('shop/Shops', { Shops: data });
+      // data contient une liste de shops
+      res.render('shop/shops', { shops: data });
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
@@ -129,7 +129,7 @@ export default {
 
     createShop(shop)
     .then((data) => {
-      res.redirect('/Shops');
+      res.redirect('/shops');
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
@@ -161,7 +161,7 @@ export default {
 
     updateShop(req.params.id, shop)
     .then((data) => {
-      res.redirect('/Shops');
+      res.redirect('/shops');
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
@@ -171,7 +171,7 @@ export default {
   getDeleteShop: (req, res) => {
     deleteShop(req.params.id)
     .then((data) => {
-      res.redirect('/Shops');
+      res.redirect('/shops');
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
@@ -182,10 +182,10 @@ export default {
 
   // Controller des Apis
   getShopsApi: (req, res) => {
-    Shops()
+    shops()
     .then((data) => {
       // data contient maintenant la valeur retournée par la fonction _.sortBy
-      // Si les opérations précédentes se sont bien passées, l'api renvoie une liste de Shops
+      // Si les opérations précédentes se sont bien passées, l'api renvoie une liste de shops
       res.send(data);
     }, (err) => {
       // Si une erreur a été renvoyée avec la fonctions throw new Error(), nous atterrissons ici
