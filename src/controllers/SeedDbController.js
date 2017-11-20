@@ -1,4 +1,4 @@
-// Controller de la route '/shows'
+// Controller de la route '/shops'
 import Errors from "../helpers/Errors";
 
 // Récupération du model
