@@ -60,20 +60,20 @@ const shop = (_id) => {
     // On prépare ici la réponse que va renvoyer l'api, il s'agit d'un élement
     let response = {
       id: data._id,
-      name: shop.name,
-      shoptype: shop.shoptype,
-      zwtype: shop.zwtype,
-      zwprecisetype: shop.zwprecisetype,
-      description: shop.description,
-      address: shop.address,
-      picture: shop.picture,
-      phone: shop.phone,
-      mail: shop.mail,
-      facebook: shop.facebook,
-      website: shop.website,
-      hours: shop.hours,
-      lat: shop.lat,
-      lng: shop.lng
+      name: data.name,
+      shoptype: data.shoptype,
+      zwtype: data.zwtype,
+      zwprecisetype: data.zwprecisetype,
+      description: data.description,
+      address: data.address,
+      picture: data.picture,
+      phone: data.phone,
+      mail: data.mail,
+      facebook: data.facebook,
+      website: data.website,
+      hours: data.hours,
+      lat: data.lat,
+      lng: data.lng
     };
     return response;
   });

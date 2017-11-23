@@ -1,6 +1,6 @@
 <<h1>Update shop</h1>
 
-<form action="/shops/create" method="post">
+<form action="/shops/update/{{shop.id}}" method="post">
   <div class="form-group">
     <label for="name">Name*</label>
      <input value="{{shop.name}}" class="form-control" type="text" id="name" name="name" placeholder="Nom du commerce" required>
