@@ -24,12 +24,17 @@ const shops = () => {
       response[response.length] = {
         id: shop._id,
         name: shop.name,
-        venue: shop.venue,
+        shoptype: shop.shoptype,
+        zwtype: shop.zwtype,
+        zwprecisetype: shop.zwprecisetype,
         description: shop.description,
-        capacity: shop.capacity,
-        price: shop.price,
-        image: shop.image,
-        date: shop.date,
+        address: shop.address,
+        picture: shop.picture,
+        phone: shop.phone,
+        mail: shop.mail,
+        facebook: shop.facebook,
+        website: shop.website,
+        hours: shop.hours,
         lat: shop.lat,
         lng: shop.lng
       }
@@ -55,15 +60,20 @@ const shop = (_id) => {
     // On prépare ici la réponse que va renvoyer l'api, il s'agit d'un élement
     let response = {
       id: data._id,
-      name: data.name,
-      venue: data.venue,
-      description: data.description,
-      capacity: data.capacity,
-      price: data.price,
-      image: data.image,
-      date: data.date,
-      lat: data.lat,
-      lng: data.lng
+      name: shop.name,
+      shoptype: shop.shoptype,
+      zwtype: shop.zwtype,
+      zwprecisetype: shop.zwprecisetype,
+      description: shop.description,
+      address: shop.address,
+      picture: shop.picture,
+      phone: shop.phone,
+      mail: shop.mail,
+      facebook: shop.facebook,
+      website: shop.website,
+      hours: shop.hours,
+      lat: shop.lat,
+      lng: shop.lng
     };
     return response;
   });
@@ -117,12 +127,17 @@ export default {
   postCreateShop: (req, res) => {
     let shop = {
       name: req.body.name,
-      venue: req.body.venue,
+      shoptype: req.body.shoptype,
+      zwtype: req.body.zwtype,
+      zwprecisetype: req.body.zwprecisetype,
       description: req.body.description,
-      capacity: req.body.capacity,
-      price: req.body.price,
-      image: req.body.image,
-      date: req.body.date,
+      address: req.body.address,
+      picture: req.body.picture,
+      phone: req.body.phone,
+      mail: req.body.mail,
+      facebook: req.body.facebook,
+      website: req.body.website,
+      hours: req.body.hours,
       lat: req.body.lat,
       lng: req.body.lng
     };
@@ -149,12 +164,17 @@ export default {
   postUpdateShop: (req, res) => {
     let shop = {
       name: req.body.name,
-      venue: req.body.venue,
+      shoptype: req.body.shoptype,
+      zwtype: req.body.zwtype,
+      zwprecisetype: req.body.zwprecisetype,
       description: req.body.description,
-      capacity: req.body.capacity,
-      price: req.body.price,
-      image: req.body.image,
-      date: req.body.date,
+      address: req.body.address,
+      picture: req.body.picture,
+      phone: req.body.phone,
+      mail: req.body.mail,
+      facebook: req.body.facebook,
+      website: req.body.website,
+      hours: req.body.hours,
       lat: req.body.lat,
       lng: req.body.lng
     };
@@ -207,12 +227,17 @@ export default {
   postCreateShopApi: (req, res) => {
     let shop = {
       name: req.body.name,
-      venue: req.body.venue,
+      shoptype: req.body.shoptype,
+      zwtype: req.body.zwtype,
+      zwprecisetype: req.body.zwprecisetype,
       description: req.body.description,
-      capacity: req.body.capacity,
-      price: req.body.price,
-      image: req.body.image,
-      date: req.body.date,
+      address: req.body.address,
+      picture: req.body.picture,
+      phone: req.body.phone,
+      mail: req.body.mail,
+      facebook: req.body.facebook,
+      website: req.body.website,
+      hours: req.body.hours,
       lat: req.body.lat,
       lng: req.body.lng
     };
@@ -229,12 +254,19 @@ export default {
   postUpdateShopApi: (req, res) => {
     let shop = {
       name: req.body.name,
-      venue: req.body.venue,
+      shoptype: req.body.shoptype,
+      zwtype: req.body.zwtype,
+      zwprecisetype: req.body.zwprecisetype,
       description: req.body.description,
-      capacity: req.body.capacity,
-      price: req.body.price,
-      image: req.body.image,
-      date: req.body.date,
+      address: req.body.address,
+      picture: req.body.picture,
+      phone: req.body.phone,
+      mail: req.body.mail,
+      facebook: req.body.facebook,
+      website: req.body.website,
+      hours: req.body.hours,
+      lat: req.body.lat,
+      lng: req.body.lng
     };
 
     updateShop(req.params.id, shop)

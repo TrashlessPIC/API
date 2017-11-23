@@ -2,23 +2,23 @@
 
 <form action="/shops/create" method="post">
   <div class="form-group">
-    <label for="name">Name</label>
+    <label for="name">Name*</label>
     <input class="form-control" type="text" id="name" name="name" placeholder="Nom du commerce" required>
   </div>
 
   <div class="form-group">
-    <label for="shop-type">Shop type</label>
-    <input class="form-control" type="text" id="shop-type" name="shop-type" placeholder="Type de commerce" required>
+    <label for="shoptype">Shop type*</label>
+    <input class="form-control" value="{{shop.type}}" type="text" id="shoptype" name="shoptype" placeholder="Type de commerce" required>
   </div>
 
   <div class="form-group">
-    <label for="zw-type">Zero waste type</label>
-    <input class="form-control" type="text" id="zw-type" name="zw-type" placeholder="Recyclage, Emballage...">
+    <label for="zwtype">Zero waste type*</label>
+    <input class="form-control" type="text" id="zwtype" name="zwtype" placeholder="Recyclage, Emballage..." required>
   </div>
 
   <div class="form-group">
-    <label for="zw-precise-type">Zero waste precise type</label>
-    <input class="form-control" type="text" id="zw-precise-type" name="zw-precise-type" placeholder="Emballages limites, recyclage elabore..." required>
+    <label for="zwprecisetype">Zero waste precise type*</label>
+    <input class="form-control" type="text" id="zwprecisetype" name="zwprecisetype" placeholder="Emballages limites, recyclage elabore..." required>
   </div>
 
   <div class="form-group">

@@ -7,14 +7,19 @@ import ShopSeeds from "../helpers/ShopSeeds";
 
 let Schema = new mongoose.Schema({
   name: { type: String },         // le nom du concert
-  venue: { type: String },        // le nom de la salle
+  shoptype: { type: String },
+  zwtype: { type: String },
+  zwprecisetype: { type: String },
   description: { type: String },  // la description
-  capacity: { type: Number },     // la capacité du shop
-  price: { type: Number },        // le prix
-  image: { type: String },        // l'url de l'image
-  date: { type: String },         // la date du concert
+  address: { type: String },  // 
+  picture: { type: String },  // 
+  phone: { type: String },  // 
+  mail: { type: String },  // 
+  facebook: { type: String },
+  website: { type: String },
+  hours: { type: String },
   lat: { type: String },          // latitude du lieu
-  lng: {type: String }            // longitude du lieu
+  lng: {type: String },           // longitude du lieu
 });
 
 let Model = mongoose.model('Shop', Schema);
@@ -39,12 +44,17 @@ export default {
   createShop: (shop) => {
     return Model.create({
       name: shop.name,
-      venue: shop.venue,
+      shoptype: shop.shoptype,
+      zwtype: shop.zwtype,
+      zwprecisetype: shop.zwprecisetype,
       description: shop.description,
-      capacity: shop.capacity,
-      price: shop.price,
-      image: shop.image,
-      date: shop.date,
+      address: shop.address,
+      picture: shop.picture,
+      phone: shop.phone,
+      mail: shop.mail,
+      facebook: shop.facebook,
+      website: shop.website,
+      hours: shop.hours,
       lat: shop.lat,
       lng: shop.lng
     });
@@ -53,12 +63,17 @@ export default {
   updateShop: (_id, shop) => {
     return Model.findOneAndUpdate({ _id }, {
       name: shop.name,
-      venue: shop.venue,
+      shoptype: shop.shoptype,
+      zwtype: shop.zwtype,
+      zwprecisetype: shop.zwprecisetype,
       description: shop.description,
-      capacity: shop.capacity,
-      price: shop.price,
-      image: shop.image,
-      date: shop.date,
+      address: shop.address,
+      picture: shop.picture,
+      phone: shop.phone,
+      mail: shop.mail,
+      facebook: shop.facebook,
+      website: shop.website,
+      hours: shop.hours,
       lat: shop.lat,
       lng: shop.lng
     }, {upsert: true}).exec();
